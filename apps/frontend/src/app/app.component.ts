@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-export type Todo = {title: string}
+import {Todo} from '@todoapp/data'
 
 @Component({
   selector: 'todoapp-root',

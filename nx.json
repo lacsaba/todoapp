@@ -9,12 +9,19 @@
   },
   "projects": {
     "frontend": {
-      "tags": []
+      "tags": [],
+      "implicitDependencies": ["backend"]
     },
     "frontend-e2e": {
       "tags": []
     },
     "backend": {
+      "tags": []
+    },
+    "data": {
+      "tags": []
+    },
+    "ui": {
       "tags": []
     }
   }

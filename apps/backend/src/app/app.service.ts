@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 
-export type Todo = { title: string };
+import { Todo } from '@todoapp/data';
 
 @Injectable()
 export class AppService {

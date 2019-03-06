@@ -1,6 +1,4 @@
 <h1>Todos</h1>
 
-<ul>
-  <li class="todo" *ngFor="let todo of todos">{{ todo.title }}</li>
-</ul>
+<todoapp-task-list [todos]='todos'></todoapp-task-list>
 <button id="add-todo" (click)="addTodo()">Add Todo</button>
