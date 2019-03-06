@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 export type Todo = {title: string}
 
@@ -8,14 +9,17 @@ export type Todo = {title: string}
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  todos: Todo[] = [
-    {title: 'Todo1'},
-    {title: 'Todo2'}
-  ]
+  todos: Todo[];
+
+  constructor(private http: HttpClient) {
+    this.fetch()
+  }
+
+  fetch() {
+    this.http.get('/api/todos').subscribe((data: any) => this.todos = data)
+  }
 
   addTodo() {
-    this.todos.push({
-      title: `Random ${Math.floor(Math.random() * 100)}`
-    })
+    this.http.post('/api/add', {}).subscribe(() => this.fetch())
   }
 }
